@@ -1,0 +1,30 @@
+from datetime import date
+
+name = input("What is your name? ")
+
+while True:
+    try:
+        age = int(input("What is your age? ").strip())
+        if not (0 <= age <= 130):
+            raise ValueError
+        break
+    except ValueError:
+        print("Please enter a valid age between 0 and 129 years")
+
+
+cur_date = date.today().year
+
+mark = 100 - int(age)
+future_date = cur_date + mark
+year_100 = age - 100
+
+if age < 100:
+    print(f"You will be 100 yrs old in {future_date}, {mark} years from now")
+
+elif age == 100:
+    print(f"Hi, {name} you are 100 this year {cur_date}")
+
+else:
+    print(f"You were 100 years old {year_100} years ago")
+
+
