@@ -1,0 +1,13 @@
+numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+small_list = []
+
+for num in numbers:
+    if num < 5:
+        small_list.append(num)
+
+print(small_list)
+
+or 
+
+small_list = [num for num in numbers if num < 5]
+print(small_list)
