@@ -1,0 +1,6 @@
+def create_list(list):
+    return (list[0], list[-1])
+
+my_list = [5, 10, 15, 20, 25]
+new_list = create_list(my_list)
+print(new_list)
