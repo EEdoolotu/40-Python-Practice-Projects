@@ -1,0 +1,16 @@
+while True:
+    try:
+        num = int(input("Enter a number: "))
+        if num == 0:
+            print("Zero is not divisible")
+            continue
+
+        numbers = range(1,1000)
+        new_list = [n for n in numbers if n % num == 0]
+
+        print(f"Numbers divisible by {num}")
+        print(new_list)
+        break
+
+    except ValueError:
+        print("Enter a Valid Integer")
