@@ -1,0 +1,34 @@
+import random 
+
+choices = range(1,10)
+
+while True:
+    num = input("Guess a number between 1 and 9: ")
+    computer_choice = random.choice(choices)
+
+    if num.lower() == "quit":
+        print("Goodbye")
+        break
+
+    if not num.isdigit():
+        print("Pls enter a valid number")
+        continue 
+
+    integer = int(num)
+    if integer <1 or integer > 9:
+        print("Choose a number between 1 and 9")
+        continue
+
+    if integer > computer_choice:
+        print("Too High")
+
+    elif integer < computer_choice:
+        print("Too Low")
+
+    else:
+        print("You are correct")
+
+    print()
+
+
+
