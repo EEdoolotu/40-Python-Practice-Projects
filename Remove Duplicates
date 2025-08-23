@@ -1,0 +1,4 @@
+def remove_duplicates(words):
+    return set(words)
+words = [1,1,1,5,5,5,8,9,7,3,4,5,] 
+print(remove_duplicates(words))
