@@ -1,0 +1,7 @@
+def reverse(sentence:str):
+    words = sentence.split()
+    reversed_words = words[::-1]
+    return " ".join(reversed_words)
+
+word = "My name is Michele"
+print(reverse(word))
