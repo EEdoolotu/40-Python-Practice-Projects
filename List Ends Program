@@ -1,0 +1,5 @@
+def edges(a):
+    return list((a[0], a[-1]))
+
+a = [5, 10, 15, 20, 25]
+print(edges(a))
