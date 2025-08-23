@@ -1,0 +1,14 @@
+import requests
+from bs4 import BeautifulSoup
+
+url = "https://www.nytimes.com/"
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
+
+# Try to get headlines inside <h3> tags (as of now, many titles are there)
+headlines = soup.find_all("h3")
+
+for idx, title in enumerate(headlines, start=1):
+    text = title.get_text(strip=True)
+    if text:  # Skip empty elements
+        print(f"{idx}. {text}")
