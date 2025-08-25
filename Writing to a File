@@ -1,0 +1,23 @@
+import requests
+from bs4 import BeautifulSoup
+
+# Get HTML from a website
+url = "https://www.nytimes.com"   # you can change this to any website
+r = requests.get(url)
+soup = BeautifulSoup(r.text, "html.parser")
+
+# Find all the links
+links = []
+for link in soup.find_all("a"):
+    href = link.get("href")
+    if href:   # ignore None values
+        links.append(href)
+
+
+filename = input("Which file would you want to store the results in ")
+
+with open(filename, "w", encoding="utf-8") as f:
+    for item in links:
+        f.write(item + "\n")
+
+print(f"Saved {len(links)}links to {filename}")
