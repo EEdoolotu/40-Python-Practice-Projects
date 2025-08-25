@@ -1,0 +1,14 @@
+file1 = r"c:\Users\ejiro\Downloads\primenumbers1.txt"
+file2 = r"c:\Users\ejiro\Downloads\happynumbers.txt"
+
+with open(file1, "r", encoding= "utf-8") as f:
+    numbers1 = set(f.read().split())
+
+with open(file2, "r", encoding= "utf-8") as f:
+    numbers2 = set(f.read().split())
+
+common_numbers = numbers1.intersection(numbers2)
+
+print("Common Numbers")
+for num in sorted(common_numbers, key = int):
+    print(num)
