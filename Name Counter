@@ -1,0 +1,14 @@
+from collections import Counter
+import requests
+
+url = "https://www.practicepython.org/assets/nameslist.txt"
+response = requests.get(url)
+names_txt = response.text
+
+names = names_txt.split()
+
+name_count = Counter(names)
+
+print(f"Name Counts: \n")
+for name, count in name_count.items():
+    print(f"{name}: {count}")
