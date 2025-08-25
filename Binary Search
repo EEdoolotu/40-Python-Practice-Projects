@@ -1,0 +1,19 @@
+def bin_search(ordered_list, num):
+    low = 0
+    high = len(ordered_list) - 1
+
+    while low <= high:
+        mid = (high + low) // 2
+        guess = ordered_list[mid]
+
+
+        if guess == num:
+            return True
+
+        elif guess < num:
+            low = mid + 1
+
+        else:
+            high = mid - 1
+
+    return False
