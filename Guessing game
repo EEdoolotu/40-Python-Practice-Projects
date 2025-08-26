@@ -1,0 +1,25 @@
+import random 
+
+low = 0
+high = 100
+guesses = 0
+
+while True:
+    guess = (low + high)// 2
+    print(f"My guess is {guess}")
+    guesses += 1
+    response = input("Is it low, high or correct ").lower()
+
+    if response == "high":
+        print("that is too low, guess again")
+        high = guess - 1
+
+    elif response == "low":
+        print("That is too high, guess again")
+        low = guess + 1
+
+    else:
+        print(f"I guessed it in", {guesses} , "tries!")
+        break
+
+
