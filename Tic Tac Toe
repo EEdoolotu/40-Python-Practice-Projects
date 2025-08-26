@@ -1,0 +1,13 @@
+n = int(input("What should the size of the board be? "))
+
+H = " ---"
+V = "|   "
+
+hline = H * n
+vline = V * n + "|"
+
+for i in range(n):
+    print(hline)
+    print(vline)
+
+print(hline)
