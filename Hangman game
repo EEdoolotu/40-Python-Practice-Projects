@@ -1,0 +1,45 @@
+word = "EVAPORATE"
+target = word.upper()
+
+guessed = set()
+correct = set()
+
+def mask_word(target, correct):
+    return " ".join(ch if ch in correct else "_" for ch in target)
+
+def is_complete(target, correct):
+    return set(target) <= correct
+
+print("Word:", mask_word(target, correct))
+while not is_complete(target, correct):
+    raw = input("Guess a letter: ")
+    letter = raw.strip().upper()
+
+    if len(letter) != 1 or not letter.isalpha():
+        print("Enter a single letter(A-Z)")
+        continue
+
+    if letter in guessed:
+        print("You already guessed that letter")
+        print("Word:", mask_word(target, correct))
+        print("Tried:", " ".join(sorted(guessed)))
+        continue
+ 
+
+    else:
+        guessed.add(letter) 
+        if letter in target:
+            correct.add(letter)
+            print("Good guess")
+
+        else:
+            print("Nope, not in the word")
+
+        print("Word:", mask_word(target, correct))
+        print("Tried:", " ".join(sorted(guessed)))
+
+
+print(f"Congrats! The word was {target}.")
+
+
+
